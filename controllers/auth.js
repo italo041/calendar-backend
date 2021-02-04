@@ -94,7 +94,9 @@ const renewToken = async (req, res) => {
 
     res.send({
         ok:true,
-        token
+        token,
+        uid,
+        name
     })
 }
 

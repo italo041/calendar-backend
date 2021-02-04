@@ -9,17 +9,17 @@ const router = Router();
 
 router.post('/new', 
 [
-    check('name', 'El nombre es obligatorio').not().isEmpty(),
-    check('email', 'El email es obligatorio').isEmail(),
-    check('password', 'El password debe de ser de 6 caracteres').isLength({min:6}),
+    check('name', 'Name is required').not().isEmpty(),
+    check('email', 'Email is required').isEmail(),
+    check('password', 'Password must be more than 6 characters').isLength({min:6}),
     validateFields
 ]
 ,createUser)
 
 router.post('/',
 [
-   check('email', 'El email es obligatorio').isEmail(),
-   check('password', 'El password debe de ser de 6 caracteres').isLength({min:6}) ,
+   check('email', 'Email is required').isEmail(),
+   check('password', 'Password must be more than 6 characters').isLength({min:6}) ,
    validateFields
 ],
  loginUser)
